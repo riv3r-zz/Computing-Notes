@@ -1,0 +1,93 @@
+Q. What happens when you initialize a repository? Why do you need to do it?
+
+A. When you initialise a repository a .git folder is added to the directory
+that *git init* was run in.
+
+You need to run *git init* so that the .git folder is created, which tracks
+the status of the repository in git. [READ IN TO MORE]
+
+***
+
+Q. How is the staging area different from the working directory and the
+repository? What value do you think it offers?
+
+A. The staging area acts as an intermediatary between the working directory
+and the repository. It allows the user to add / remove files before making
+a commit to git.
+
+[THINK ABOUT YOUR WORDS MORE ABOUT HOW THIS IS BENEFICIAL]
+
+***
+
+Q. How can you use the staging area to make sure you have one commit per
+logical change?
+
+A. Use the staging area to review what files are queued for the next
+commit. If an update to a file doesn't logically make sense, then use *git
+rm --cached <FILE>* to remove it from staging.
+
+***
+
+Q. What are some situations when branches would be helpful in keeping your
+history organized? How would branches help?
+
+A. Branches would cater to situations where features need to be built into
+the a program which may cause the program to be unstable. Others include
+localisation of programs (i.e.: different language modes), and port support
+(i.e.: Mac OS X --> Windows).
+
+Branches help as any changes made are local to it.
+
+***
+
+Q. How do the diagrams help you visualize the branch structure?
+
+A. Diagrams allow me to visualise the repository as if it were a tree ADT.
+Each node (i.e.: commit) in the tree has a parent node (previous commit)
+and a child (next commit), which can then "branch" from the tree. Using the
+diagram when checking out nodes also can remind me that changes made within
+the checked out node will be lost unless I make a branch from that node.
+
+I.e.:
+
+                --- D --- E --- F
+              /                   \
+             /                     \
+A --- B --- C --- --- --- --- ---   J
+            \                      /
+             \                   /
+              --- G --- H --- I
+                        |
+                        |
+                        X
+
+
+Makes it easier to see where branches are created / merge, and allows me to
+see that any changes made in X will be lost unless I branch from it. 
+
+***
+
+Q. What is the result of merging two branches together? Why do we represent
+it in the diagram the way we do?
+
+A. Let branch 1 = b1, Let master = M.
+
+If changes have been committed in b1 then when merged with M the files will
+be updated in M. The commit history will also be automatically added and
+sorted into M's commit history, which is why they are reflected in the
+diagrams as such.
+
+***
+
+Q. What are the pros and cons of Git’s automatic merging vs. always doing
+merges manually?
+
+A.
+
++ Don't have to merge every file individually
+
+- Can't merge individual files to master, have to merge all. 
+
+
+
+
